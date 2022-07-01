@@ -1,10 +1,12 @@
 import React from 'react'
+import logo from '../images/logo2.svg'
+import { FaFacebookSquare, FaTwitter, FaPinterest, FaInstagram } from 'react-icons/fa'
 
 function Footer() {
   return (
-    <div>
-        <div><img src="" alt="" /></div>
-        <div>
+    <footer>
+        <div><img src={logo} alt="logo" /></div>
+        <div className='links'>
             <div>
                 <h4>Features</h4>
                 <ul>
@@ -31,10 +33,13 @@ function Footer() {
                 </ul>
             </div>
         </div>
-        <div>
-            
+        <div className='icons'>
+            <FaFacebookSquare />
+            <FaTwitter />
+            <FaPinterest />
+            <FaInstagram />
         </div>
-    </div>
+    </footer>
   )
 }
 

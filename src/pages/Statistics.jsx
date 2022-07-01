@@ -2,10 +2,12 @@ import React from 'react'
 import iconBrand from '../images/icon-brand-recognition.svg'
 import iconDetailed from '../images/icon-detailed-records.svg'
 import iconCustomizable from '../images/icon-fully-customizable.svg'
+import ShortenForm from '../layout/ShortenForm'
 
 function Statistics() {
   return (
     <div className='statistics'>
+        <ShortenForm />
         <div className='advanced'>
             <h2>Advanced Statistics</h2>
             <p>

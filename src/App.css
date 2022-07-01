@@ -11,7 +11,7 @@ body{
   min-height: 100vh;
   font-size: 18px;
   font-family: 'Poppins', sans-serif;
-  max-width: 1440px;
+  /* max-width: 1440px; */
 }
 header{
   display: flex;
@@ -93,7 +93,7 @@ p{
   flex-direction: column;
   align-items: center;
   background-color: hsla(0, 0%, 75%, 0.2);
-  padding: 100px;
+  padding: 0 100px 100px 100px;
 }
 .advanced{
   text-align: center;
@@ -149,4 +149,73 @@ h3{
   color: #ffffff;
   margin-bottom: 20px;
   font-size: 2em;
+}
+footer{
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(260, 8%, 14%);
+  padding:50px 100px;
+  color: #ffffff;
+}
+.links{
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  width: 100%;
+}
+.links h4{
+  margin-bottom: 25px;
+}
+.links ul li{
+  list-style: none;
+  color: hsla(0, 0%, 100%, 0.7);
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.links ul li:hover{
+  color:hsl(180, 66%, 49%);
+}
+.icons{
+  display: flex;
+  justify-content: space-between;
+  max-width: 150px;
+  width: 100%;
+  cursor: pointer;
+}
+form{
+  background-color: hsl(255, 11%, 22%);
+  background-image: url(./images/bg-shorten-desktop.svg);
+  background-repeat: no-repeat;
+  width: 70%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  margin: -50px 0 20px 0;
+}
+.input-group{
+  display: flex;
+}
+form input{
+  border-radius: 5px;
+  padding: 15px;
+  border: none;
+  width: 100%;
+  font-size: 18px;
+  outline: none;
+}
+form button{
+  background-color: hsl(180, 66%, 49%);
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  width: 200px;
+  /* padding: 15px; */
+  margin-left: 15px;
+}
+.error{
+  padding-top: 10px;
+  color:hsl(0, 87%, 67%);
+  font-style: italic;
+  font-size: 18px;
 }
