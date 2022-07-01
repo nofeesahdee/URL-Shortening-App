@@ -4,10 +4,10 @@ import iconDetailed from '../images/icon-detailed-records.svg'
 import iconCustomizable from '../images/icon-fully-customizable.svg'
 import ShortenForm from '../layout/ShortenForm'
 
-function Statistics() {
+function Statistics( { handleAdd }) {
   return (
     <div className='statistics'>
-        <ShortenForm />
+        <ShortenForm handleAdd={handleAdd}/>
         <div className='advanced'>
             <h2>Advanced Statistics</h2>
             <p>

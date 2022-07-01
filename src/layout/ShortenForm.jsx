@@ -1,12 +1,13 @@
 import React from 'react'
-// import ShortenContext from '../context/shortenContext'
 import { useState,  useEffect } from 'react'
+import ShortenOutput from './ShortenOutput'
 
-function ShortenForm() {
+function ShortenForm({ handleAdd }) {
     const [ text, setText ] = useState('')
     const [ error, setError ] = useState('')
     const [ shortLink, setShortLink ] = useState('')
-    
+    const [ output, setOutput ] = useState([])
+
     // fetch data from the API
     useEffect(() => {
         fetch(`https://api.shrtco.de/v2/shorten?url=${text}`)
@@ -35,8 +36,7 @@ function ShortenForm() {
             text,
             shortLink
         }
-        console.log(newOutput)
-        setText('')
+        handleAdd(newOutput) 
     }
 
   return (
@@ -53,9 +53,8 @@ function ShortenForm() {
             </div>
             {error && <div className='error'>{error}</div>}
         </form>
-        <div>
-            <div>{shortLink}</div>
-        </div>
+        <p>{shortLink}</p>
+        <ShortenOutput handleAdd={handleAdd}/>
     </>
   )
 }

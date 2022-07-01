@@ -1,12 +1,9 @@
 import React from 'react'
-import ShortenContext from '../context/shortenContext'
-import { useContext } from 'react'
 
-function ShortenOutput() {
-  const { } = useContext(ShortenContext)
-  
+function ShortenOutput({ handleAdd }) {
+
   return (
-    <div>
+    <div className='shorten-output'>
       <div></div>
       <div></div>
     </div>
