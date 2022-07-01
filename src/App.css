@@ -219,3 +219,13 @@ form button{
   font-style: italic;
   font-size: 18px;
 }
+.shorten-list{
+  margin-bottom: 100px;
+}
+.shorten-output{
+  background-color: #ffffff;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}

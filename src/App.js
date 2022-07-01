@@ -10,6 +10,7 @@ import { useState } from 'react';
 function App() {
   const[output, setOutput] = useState([
     {
+      id: 1,
       text:`https://frontendmentor-url-shortner.vercel.app/`,
       shortLink:`https://shrtco.de/W3xMGq`,
     }
@@ -17,13 +18,13 @@ function App() {
 
   const addOutput = (newOutput) => {
     setOutput([newOutput, ...output])
-    console.log(output)
-}
+  }
+
   return (
     <ShortenProvider>
       <Header />
       <Hero />
-      <Statistics handleAdd={addOutput}/>
+      <Statistics handleAdd={addOutput} output={output}/>
       <Boost />
       <Footer />
     </ShortenProvider>

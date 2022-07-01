@@ -1,18 +1,19 @@
 import React from 'react'
 import { useState,  useEffect } from 'react'
-import ShortenOutput from './ShortenOutput'
+import Spinner from './Spinner'
 
 function ShortenForm({ handleAdd }) {
     const [ text, setText ] = useState('')
     const [ error, setError ] = useState('')
     const [ shortLink, setShortLink ] = useState('')
-    const [ output, setOutput ] = useState([])
-
+    const [ isLoading, setIsLoading ] = useState(true)
+                                       
     // fetch data from the API
     useEffect(() => {
         fetch(`https://api.shrtco.de/v2/shorten?url=${text}`)
         .then((response) => response.json())
         .then((data) => checkData(data))
+        setIsLoading(false)
     }, [text]);
 
     const checkData = (data) =>{
@@ -49,12 +50,14 @@ function ShortenForm({ handleAdd }) {
                     onChange={handleTextChange}
                     placeholder='Shorten a link here...'
                 />
-                <button type='submit'>Shorten It!</button>
+                {isLoading ?
+                    <Spinner /> :
+                    <button type='submit'>Shorten It!</button>
+                }
             </div>
             {error && <div className='error'>{error}</div>}
         </form>
-        <p>{shortLink}</p>
-        <ShortenOutput handleAdd={handleAdd}/>
+        {/* <ShortenOutputList output={output}/> */}
     </>
   )
 }

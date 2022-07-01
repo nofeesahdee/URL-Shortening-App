@@ -3,11 +3,13 @@ import iconBrand from '../images/icon-brand-recognition.svg'
 import iconDetailed from '../images/icon-detailed-records.svg'
 import iconCustomizable from '../images/icon-fully-customizable.svg'
 import ShortenForm from '../layout/ShortenForm'
+import ShortenOutputList from '../layout/ShortenOutputList'
 
-function Statistics( { handleAdd }) {
+function Statistics( { handleAdd, output }) {
   return (
     <div className='statistics'>
-        <ShortenForm handleAdd={handleAdd}/>
+        <ShortenForm handleAdd={handleAdd} output={output}/>
+        <ShortenOutputList output={output}/>
         <div className='advanced'>
             <h2>Advanced Statistics</h2>
             <p>
