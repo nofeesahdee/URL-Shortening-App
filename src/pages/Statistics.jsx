@@ -7,7 +7,7 @@ import ShortenOutputList from '../layout/ShortenOutputList'
 
 function Statistics( { handleAdd, output }) {
   return (
-    <div className='statistics'>
+    <main className='statistics'>
         <div className="container stat-con">
             <ShortenForm handleAdd={handleAdd} output={output}/>
             <ShortenOutputList output={output}/>
@@ -45,7 +45,7 @@ function Statistics( { handleAdd, output }) {
                 </div>
             </div>
         </div>
-    </div>
+    </main>
   )
 }
 
