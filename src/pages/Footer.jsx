@@ -6,9 +6,9 @@ function Footer() {
   return (
     <footer>
         <div className="container footer-con">
-        <div><img src={logo} alt="logo" /></div>
+        <div className='footer-logo'><img src={logo} alt="logo" /></div>
         <div className='links'>
-            <div>
+            <div className='link-tag'>
                 <h4>Features</h4>
                 <ul>
                     <li>Link Shortening</li>
@@ -16,7 +16,7 @@ function Footer() {
                     <li>Analytics</li>
                 </ul>
             </div>
-            <div>
+            <div className='link-tag'>
                 <h4>Resources</h4>
                 <ul>
                     <li>Blog</li>
@@ -24,7 +24,7 @@ function Footer() {
                     <li>Support</li>
                 </ul>
             </div>
-            <div>
+            <div className='link-tag'>
                 <h4>Company</h4>
                 <ul>
                     <li>About</li>

@@ -14,7 +14,7 @@ function Header() {
             <li>Resources</li>
         </ul>
       </nav>
-      <div>
+      <div className='nav-link'>
           <button className='login'>Login</button>
           <button className='signup'>Sign Up</button>
       </div>

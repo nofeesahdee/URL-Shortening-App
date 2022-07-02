@@ -31,13 +31,14 @@ nav{
 }
 nav ul{
   display: flex;
-  align-self: center;
+  /* align-self: center; */
 }
 nav ul li{
   list-style: none;
   margin-left: 30px;
   color: hsl(257, 7%, 63%);
   font-weight: 700;
+  cursor: pointer;
 }
 nav ul li:hover{
   color: hsl(260, 8%, 14%);
@@ -79,10 +80,10 @@ form button:hover,
   align-self: center;
   max-width:500px;
 }
-.hero-img{
+/* .hero-img{
   width: 100%;
-  /* margin-right:-100px; */
-}
+  /* margin-right:-100px; 
+} */
 h1{
   font-size: 3em;
   color: hsl(255, 11%, 22%);
@@ -127,7 +128,7 @@ h2{
 .details,
 .customizable{
   background-color: #ffffff;
-  width: 360px;
+  width: 340px;
   height: 260px;
   padding: 0 30px;
   border-radius: 10px;
@@ -179,7 +180,7 @@ footer{
   width: 100%;
 }
 .links h4{
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 .links ul li{
   list-style: none;
@@ -276,4 +277,91 @@ form button{
   padding: 15px 30px;
   margin-left: 20px;
   align-self: center;
+}
+@media(max-width:800px){
+  header{
+    padding: 20px;
+  }
+  nav ul,
+  .nav-link{
+    display: none;
+  }
+  .hero{
+    padding: 30px 20px 100px 20px;
+  }
+  .hero-con{
+    flex-direction: column-reverse;
+  }
+  .hero-text{
+    text-align: center;
+  }
+  .hero-img img{
+    margin-bottom:25px;
+    width: 100%;
+    align-self: center;
+  }
+  .statistics{
+    padding: 0 20px 100px 20px;
+  }
+  form{
+    width: 100%;
+  }
+  .input-group{
+    flex-direction: column;
+  }
+  form input{
+    margin-bottom: 25px;
+  }
+  form button{
+    width: 100%;
+    margin-left: 0;
+    padding: 15px;
+  }
+  .offers{
+    flex-direction: column;
+    align-items: center;
+  }
+  .details{
+    margin-top: 60px;
+  }
+  .customizable{
+    margin-top: 60px;
+  }
+  .footer-con{
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-logo{
+    margin-bottom: 25px;
+  }
+  .links{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .link-tag{
+    margin-bottom:25px;
+  }
+  .shorten-list{
+    width: 100%;
+  }
+  .shorten-output{
+    flex-direction: column;
+  }
+  .item-text{
+    /* max-width: 200px; */
+    margin-bottom: 25px;
+    text-align: center;
+    margin-bottom: 1px solid black;
+  }
+  .copy-link{
+    flex-direction: column;
+  }
+  .shortlink{
+    margin-bottom: 15px;
+  }
+  .copy,
+  .copy-blue{
+    width: 100%;
+  }
 }
