@@ -30,14 +30,14 @@ function ShortenForm({ handleAdd }) {
         e.preventDefault();
         if(text === ''){
             setError('Please add a link')
-        }else if (text !== ''){
+        }else if (text !== '' || shortLink !== ''){
             setError('') 
+            const newOutput = {
+                text,
+                shortLink
+            }
+            handleAdd(newOutput)
         }
-        const newOutput = {
-            text,
-            shortLink
-        }
-        handleAdd(newOutput) 
     }
 
   return (
@@ -57,7 +57,6 @@ function ShortenForm({ handleAdd }) {
             </div>
             {error && <div className='error'>{error}</div>}
         </form>
-        {/* <ShortenOutputList output={output}/> */}
     </>
   )
 }

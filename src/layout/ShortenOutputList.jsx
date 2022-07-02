@@ -1,15 +1,13 @@
 import React from 'react'
+import ShortenOutput from './ShortenOutput'
 
 function ShortenOutputList({ output }) {
 
   return (
     <div className='shorten-list'>
-        {output.map((item) => {
-            <div className='shorten-output'>
-                <div>{item.text}</div>
-                <div>{item.shortLink}</div>
-            </div>
-        })}
+      {output.map((item) => (
+          <ShortenOutput key={item.id} item={item}/>
+      ))}
     </div>
   )
 }
