@@ -6,14 +6,14 @@ function ShortenForm({ handleAdd }) {
     const [ text, setText ] = useState('')
     const [ error, setError ] = useState('')
     const [ shortLink, setShortLink ] = useState('')
-    const [ isLoading, setIsLoading ] = useState(true)
+    const [ isLoading, setIsLoading ] = useState()
                                        
     // fetch data from the API
     useEffect(() => {
         fetch(`https://api.shrtco.de/v2/shorten?url=${text}`)
         .then((response) => response.json())
         .then((data) => checkData(data))
-        setIsLoading(false)
+        setIsLoading()
     }, [text]);
 
     const checkData = (data) =>{

@@ -1,4 +1,5 @@
 import './App.css';
+import { v4 as uuidv4 } from 'uuid'
 import Boost from './pages/Boost';
 import Footer from './pages/Footer';
 import Header from './pages/Header';
@@ -17,6 +18,7 @@ function App() {
   ])
 
   const addOutput = (newOutput) => {
+    newOutput.id = uuidv4()
     setOutput([newOutput, ...output])
   }
 
