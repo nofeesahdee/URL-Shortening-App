@@ -5,31 +5,33 @@ import Footer from './pages/Footer';
 import Header from './pages/Header';
 import Hero from './pages/Hero';
 import Statistics from './pages/Statistics';
-import { ShortenProvider } from './context/shortenContext';
 import { useState } from 'react';
 
 function App() {
-  const[output, setOutput] = useState([
-    {
-      id: 1,
-      text:`https://frontendmentor-url-shortner.vercel.app/`,
-      shortLink:`https://shrtco.de/W3xMGq`,
-    }
-  ])
+  const[output, setOutput] = useState([])
+
+  // function storeUrl(url) {
+  //   const toStorage = sessionStorage.getItem("urls")
+  //     ? JSON.parse(sessionStorage.getItem("urls"))
+  //     : [];
+  //   toStorage.push(url);
+  //   sessionStorage.setItem("urls", JSON.stringify(toStorage));
+  // }
 
   const addOutput = (newOutput) => {
     newOutput.id = uuidv4()
-    setOutput([newOutput, ...output])
+    const toStore = setOutput([newOutput, ...output])
+    sessionStorage.setItem(output.id , toStore);
   }
 
   return (
-    <ShortenProvider>
+    <>
       <Header />
       <Hero />
       <Statistics handleAdd={addOutput} output={output}/>
       <Boost />
       <Footer />
-    </ShortenProvider>
+    </>
   );
 }
 

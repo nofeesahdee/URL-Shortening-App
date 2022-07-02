@@ -5,6 +5,7 @@ import { FaFacebookSquare, FaTwitter, FaPinterest, FaInstagram } from 'react-ico
 function Footer() {
   return (
     <footer>
+        <div className="container footer-con">
         <div><img src={logo} alt="logo" /></div>
         <div className='links'>
             <div>
@@ -38,6 +39,7 @@ function Footer() {
             <FaTwitter />
             <FaPinterest />
             <FaInstagram />
+        </div>
         </div>
     </footer>
   )

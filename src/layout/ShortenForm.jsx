@@ -6,14 +6,14 @@ function ShortenForm({ handleAdd }) {
     const [ text, setText ] = useState('')
     const [ error, setError ] = useState('')
     const [ shortLink, setShortLink ] = useState('')
-    const [ isLoading, setIsLoading ] = useState()
+    const [ isLoading, setIsLoading ] = useState(true)
                                        
     // fetch data from the API
     useEffect(() => {
         fetch(`https://api.shrtco.de/v2/shorten?url=${text}`)
         .then((response) => response.json())
         .then((data) => checkData(data))
-        setIsLoading()
+        setIsLoading(false)
     }, [text]);
 
     const checkData = (data) =>{
@@ -28,7 +28,7 @@ function ShortenForm({ handleAdd }) {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        if(text === ''){
+        if(text === '' ){
             setError('Please add a link')
         }else if (text !== '' || shortLink !== ''){
             setError('') 
@@ -37,6 +37,7 @@ function ShortenForm({ handleAdd }) {
                 shortLink
             }
             handleAdd(newOutput)
+            setText('')
         }
     }
 
@@ -51,8 +52,8 @@ function ShortenForm({ handleAdd }) {
                     placeholder='Shorten a link here...'
                 />
                 {isLoading ?
-                    <Spinner /> :
-                    <button type='submit'>Shorten It!</button>
+                 <Spinner /> :
+                 <button type='submit'>Shorten It!</button>
                 }
             </div>
             {error && <div className='error'>{error}</div>}
